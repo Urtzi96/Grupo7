@@ -1,7 +1,8 @@
 package blackjack;
 
 public class Modelo {
-	private int totalValor;
+	private int totalValorUs;
+	private int totalValorCroup;
 	private int A;//cartas del usuario
 	private int B;//cartas del crupier
 	private int dineroActual;//dinero que tiene el usuario
@@ -18,6 +19,10 @@ public class Modelo {
 		this.apuesta=apues;
 		
 		return apuesta;
+	}
+	
+	public boolean cambioVentana(){
+		return true;
 	}
 	
 	public int crearCarta(){
@@ -56,5 +61,47 @@ public class Modelo {
 			return;
 
 		}
+	}
+	
+	public int totalCartaUser(int A){
+		totalValorUs=totalValorUs+A;
+		
+		return totalValorUs;
+	}
+	
+	public int totalCartaCroup(int A){
+		totalValorCroup=totalValorCroup+A;
+		
+		return totalValorCroup;
+	}
+	
+	public int resta(){
+		dineroActual=dineroActual-apuesta;
+		
+		return dineroActual;
+	}
+	
+	public boolean ganasPierdes(){
+		if(A>21){
+			return false;
+		}else{
+			if(B>21){
+				return true;
+			}else{
+				if(A>B){
+					return true;
+				}else{
+					return false;
+				}
+			}
+		}
+	}
+	
+	public int ganancias(boolean ganasPierdes){
+		if(ganasPierdes==true){
+			dineroActual=dineroActual+(apuesta*2);
+		}
+		
+		return dineroActual;
 	}
 }
