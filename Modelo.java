@@ -7,7 +7,6 @@ public class Modelo {
 	private int B;//cartas del crupier
 	private int dineroActual;//dinero que tiene el usuario
 	private int apuesta;//dinero que apuesta en la partida
-	private int ganancias;//ganancias de la partida
 	
 	public int Money(int din){
 		dineroActual=din;
