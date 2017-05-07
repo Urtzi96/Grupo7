@@ -10,6 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import java.awt.Font;
+import java.awt.Image;
+
 public class ClaseVista extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -18,8 +21,8 @@ public class ClaseVista extends JFrame {
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
 	JLabel sumaCroupier= null; 
-	JLabel dineroTotal= null; //El dinero se introducir√° en la primera ventana.
-	JLabel apuesta= null; //La apuesta se realizar√° en la primera ventana.
+	JLabel dineroTotal= null; //El dinero se introducir· en la primera ventana.
+	JLabel apuesta= null; //La apuesta se realizar· en la primera ventana.
 	JLabel sumaUsuario= null; 
 	JButton pedirCarta = null;
 	JButton plantarse = null;
@@ -41,14 +44,14 @@ public class ClaseVista extends JFrame {
 	private static JPanel panel6 = new JPanel();
 	private static JPanel panel7 = new JPanel();
 	private static JPanel panel8 = new JPanel();
-	
+	private static JPanel panel9 = new JPanel();
 	
 	// IMPORTANDO VALORES EN PRIMERA VENTANA
 	public ClaseVista(){
 		bloqueContenedor2 = getContentPane(); 
 		setTitle("Black Jack"); 
 		setLayout(new GridLayout(0,1));
-		setSize(1000,1000);
+		setSize(700,700);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -66,11 +69,14 @@ public class ClaseVista extends JFrame {
 		panel6.add(dineroApuesta);
 		panel7.add(tuDinero);
 		panel8.add(tuApuesta);
+		panel9.add(botonSiguiente);
 		
 		bloqueContenedor2.add(panel5);
 		bloqueContenedor2.add(panel7);
 		bloqueContenedor2.add(panel6); 
 		bloqueContenedor2.add(panel8); 
+		bloqueContenedor2.add(panel9); 
+		
 		
 		dineroVenido.setHorizontalAlignment(JLabel.CENTER);
 		dineroApuesta.setHorizontalAlignment(JLabel.CENTER);
@@ -79,7 +85,7 @@ public class ClaseVista extends JFrame {
 		botonSiguiente.setHorizontalAlignment(JButton.CENTER);
 
 		setVisible(true);
-
+		
 	}
 
 	//IMPORTANDO VALORES EN SEGUNDA VENTANA
@@ -87,7 +93,7 @@ public class ClaseVista extends JFrame {
 		bloqueContenedor = getContentPane(); 
 		setTitle("Black Jack"); 
 		setLayout(new FlowLayout()); 
-		setSize(1000,1000);
+		setSize(700,700);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -95,10 +101,10 @@ public class ClaseVista extends JFrame {
 			}
 		});
 
-		sumaCroupier = new JLabel("El croupier tiene "/*a√±adir metodo*/);
-		dineroTotal = new JLabel("Dinero: \n" /*A√±adir dinero*/ );
-		apuesta = new JLabel("Apuesta: \n " /*A√±adir apuesta*/);
-		sumaUsuario = new JLabel("Tienes "/*a√±adir metodo*/);
+		sumaCroupier = new JLabel("El croupier tiene "/*aÒadir metodo*/);
+		dineroTotal = new JLabel("Dinero: \n" /*AÒadir dinero*/ );
+		apuesta = new JLabel("Apuesta: \n " /*AÒadir apuesta*/);
+		sumaUsuario = new JLabel("Tienes "/*aÒadir metodo*/);
 		pedirCarta = new JButton("Pedir Carta");
 		plantarse = new JButton("Plantarse");
 
