@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -30,7 +31,8 @@ public class ClaseVista extends JFrame {
 	private static JPanel panel2 = new JPanel();
 	private static JPanel panel3 = new JPanel();
 	private static JPanel panel4 = new JPanel();
-	
+	private static JPanel panel10 = new JPanel();
+	private static JPanel panel11 = new JPanel();
 	
 	
 	//DECLARACION PRIMERA VENTANA
@@ -61,8 +63,8 @@ public class ClaseVista extends JFrame {
 		
 		dineroVenido = new JLabel("Con cuanto dinero has venido?");
 		dineroApuesta = new JLabel("Cuanto dinero vas a apostar?");
-		tuDinero = new JTextField();
-		tuApuesta = new JTextField();
+		tuDinero = new JTextField("", 8);
+		tuApuesta = new JTextField("", 8);
 		botonSiguiente = new JButton("Jugar");
 		
 		panel5.add(dineroVenido);
@@ -92,7 +94,7 @@ public class ClaseVista extends JFrame {
 	public ClaseVista(boolean cambioVentana) {
 		bloqueContenedor = getContentPane(); 
 		setTitle("Black Jack"); 
-		setLayout(new FlowLayout()); 
+		setLayout(new BorderLayout()); 
 		setSize(700,700);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
@@ -112,20 +114,18 @@ public class ClaseVista extends JFrame {
 		panel2.add(dineroTotal);
 		panel3.add(apuesta);
 		panel4.add(sumaUsuario);
+		panel10.add(pedirCarta);
+		panel11.add(plantarse);
 		
-		bloqueContenedor.add(panel1);
-		bloqueContenedor.add(panel2);
-		bloqueContenedor.add(panel3); 
-		bloqueContenedor.add(pedirCarta);  
-		bloqueContenedor.add(panel4);
-		bloqueContenedor.add(plantarse);
-
-		sumaCroupier.setHorizontalAlignment(JLabel.CENTER);
-		apuesta.setHorizontalAlignment(JLabel.CENTER);
-		sumaUsuario.setHorizontalAlignment(JLabel.CENTER);
+		
+		bloqueContenedor.add(panel1, BorderLayout.NORTH);
 		dineroTotal.setHorizontalAlignment(JLabel.RIGHT);
-		pedirCarta.setHorizontalAlignment(JButton.LEFT);
-		plantarse.setHorizontalAlignment(JButton.RIGHT);
+		bloqueContenedor.add(panel2, BorderLayout.NORTH);
+		bloqueContenedor.add(panel3, BorderLayout.CENTER); 
+		bloqueContenedor.add(panel4, BorderLayout.SOUTH);
+		bloqueContenedor.add(panel10, BorderLayout.WEST);
+		bloqueContenedor.add(panel11, BorderLayout.EAST);
+		
 
 		setVisible(false);
 

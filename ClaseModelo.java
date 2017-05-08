@@ -19,10 +19,6 @@ public class ClaseModelo {
 		return apuesta;
 	}
 
-	public boolean cambioVentana(){
-		return true;
-	}
-
 	public int crearCarta(){
 		A=(int)(Math.random()*10+1);
 

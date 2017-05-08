@@ -22,9 +22,10 @@ public class ClaseControlador implements ActionListener {
 
             // Capturamos la apuesta que va a hacer el usuario
 			if(objEvento.getSource()==objVista.botonSiguiente){
-			   boolean x=objModelo.cambioVentana();
+			   objVista.setVisible(false);
+			   objVista = new ClaseVista(true);
 			}
-			objVista = new ClaseVista(true);
+			
 			
 		}
 		catch(Exception objExcepcion) {
