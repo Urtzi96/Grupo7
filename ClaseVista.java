@@ -34,6 +34,14 @@ public class ClaseVista extends JFrame {
 	private static JPanel panel10 = new JPanel();
 	private static JPanel panel11 = new JPanel();
 	
+	//DECLARACION TERCERA VENTANA
+	Container bloqueContenedor3 = null; 
+	JLabel pregunta=null;
+	JTextField respuesta=null;
+	JButton aceptar=null;
+	private static JPanel panel20 = new JPanel();
+	private static JPanel panel21 = new JPanel();
+	private static JPanel panel22 = new JPanel();
 	
 	//DECLARACION PRIMERA VENTANA
 	Container bloqueContenedor2 = null; 
@@ -104,8 +112,8 @@ public class ClaseVista extends JFrame {
 		});
 
 		sumaCroupier = new JLabel("El croupier tiene "/*añadir metodo*/);
-		dineroTotal = new JLabel("Dinero: \n" /*Añadir dinero*/ );
-		apuesta = new JLabel("Apuesta: \n " /*Añadir apuesta*/);
+		dineroTotal = new JLabel();
+		apuesta = new JLabel();
 		sumaUsuario = new JLabel("Tienes "/*añadir metodo*/);
 		pedirCarta = new JButton("Pedir Carta");
 		plantarse = new JButton("Plantarse");
@@ -121,16 +129,40 @@ public class ClaseVista extends JFrame {
 		bloqueContenedor.add(panel1, BorderLayout.NORTH);
 		dineroTotal.setHorizontalAlignment(JLabel.RIGHT);
 		bloqueContenedor.add(panel2, BorderLayout.NORTH);
-		bloqueContenedor.add(panel3, BorderLayout.CENTER); 
+		bloqueContenedor.add(panel1, BorderLayout.CENTER); 
 		bloqueContenedor.add(panel4, BorderLayout.SOUTH);
 		bloqueContenedor.add(panel10, BorderLayout.WEST);
 		bloqueContenedor.add(panel11, BorderLayout.EAST);
 		
 
-		setVisible(false);
+		setVisible(cambioVentana);
+	}
+	
+	public ClaseVista(int A) {
+		bloqueContenedor3 = getContentPane(); 
+		setTitle("VALOR DEL AS"); 
+		setLayout(new BorderLayout()); 
+		setSize(100,100);
+		setLocationRelativeTo(null);
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
 
-		if(cambioVentana == true){
-			setVisible(true);
-		}
+		pregunta = new JLabel("Que valor quieres que tenga el AS?(11 o 1)"/*añadir metodo*/);
+		respuesta = new JTextField("", 8);
+		aceptar = new JButton("ACEPTAR");
+
+		panel20.add(pregunta);
+		panel21.add(respuesta);	
+		panel22.add(aceptar);
+		
+		bloqueContenedor3.add(panel20, BorderLayout.NORTH);
+		bloqueContenedor3.add(panel21, BorderLayout.CENTER);
+		bloqueContenedor3.add(panel22, BorderLayout.SOUTH);
+		
+
+		setVisible(false);
 	}
 }

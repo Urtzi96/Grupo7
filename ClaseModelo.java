@@ -1,11 +1,9 @@
 public class ClaseModelo {
-	private int totalValorUs;
-	private int totalValorCroup;
-	private int A;//cartas del usuario
-	private int B;//cartas del crupier
 	private int dineroActual;//dinero que tiene el usuario
 	private int apuesta;//dinero que apuesta en la partida
-	private boolean x = false;
+	private int totalValorUs;
+	private int totalValorCr;
+	private int carta;//nueva carta
 	
 	public int Money(int din){
 		dineroActual=din;
@@ -20,22 +18,22 @@ public class ClaseModelo {
 	}
 
 	public int crearCarta(){
-		A=(int)(Math.random()*10+1);
+		carta=(int)(Math.random()*10+1);
 
-		return A;
+		return carta;
 	}
 
 	public int as(int valorAs){
 		if(valorAs==1){
-			A=1;
+			carta=1;
 		}else{
-			A=11;
+			carta=11;
 		}
 
-		return A;
+		return carta;
 	}
 
-	public boolean stop(){
+	public boolean stop(int B){
 		if(B>=16){
 			return true;
 		}else{
@@ -56,16 +54,16 @@ public class ClaseModelo {
 		}
 	}
 
-	public int totalCartaUser(int A){
+	public int totalCartaUs(int A){
 		totalValorUs=totalValorUs+A;
 
 		return totalValorUs;
 	}
+	
+	public int totalCartaCr(int A){
+		totalValorCr=totalValorCr+A;
 
-	public int totalCartaCroup(int A){
-		totalValorCroup=totalValorCroup+A;
-
-		return totalValorCroup;
+		return totalValorCr;
 	}
 
 	public int resta(){
@@ -74,7 +72,7 @@ public class ClaseModelo {
 		return dineroActual;
 	}
 
-	public boolean ganasPierdes(){
+	public boolean ganasPierdes(int A, int B){
 		if(A>21){
 			return false;
 		}else{
@@ -96,13 +94,5 @@ public class ClaseModelo {
 		}
 
 		return dineroActual;
-	}
-
-	public boolean getX() {
-		return x;
-	}
-
-	public void setX(boolean x) {
-		this.x = x;
 	}
 }
