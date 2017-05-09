@@ -23,13 +23,13 @@ public class ClaseModelo {
 		return carta;
 	}
 
-	public int as(int valorAs){
-		if(valorAs==1){
+	public int as(String valorAs){
+		if(valorAs=="1"){
 			carta=1;
 		}else{
 			carta=11;
 		}
-
+		
 		return carta;
 	}
 

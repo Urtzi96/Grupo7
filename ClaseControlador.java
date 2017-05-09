@@ -44,7 +44,7 @@ public class ClaseControlador implements ActionListener {
 				if(A==1){
 					objVista3.setVisible(true);
 					valorAs=objVista3.respuesta.getText();
-					
+					A=objModelo.as(valorAs);
 				}
 				totalUs=objModelo.totalCartaUs(A);
 				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
@@ -60,7 +60,7 @@ public class ClaseControlador implements ActionListener {
 				while(objModelo.stop(totalCr)==false){
 					B=objModelo.crearCarta();
 					if(B==1){
-						B=objModelo.as(1);//Aqui 1 o 11 nosecomo.
+						//Croupier elije 1 o 11?
 					}
 					totalCr=objModelo.totalCartaCr(B);
 					objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
@@ -70,7 +70,9 @@ public class ClaseControlador implements ActionListener {
 			}
 			
 			if(objEvento.getSource()==objVista3.aceptar){
-				objVista3.setVisible(false);
+				if(valorAs=="1" || valorAs=="11"){
+					objVista3.setVisible(false);
+				}
 			}
 		}
 		catch(Exception objExcepcion) {

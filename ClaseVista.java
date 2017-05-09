@@ -142,7 +142,7 @@ public class ClaseVista extends JFrame {
 		bloqueContenedor3 = getContentPane(); 
 		setTitle("VALOR DEL AS"); 
 		setLayout(new BorderLayout()); 
-		setSize(100,100);
+		setSize(200,200);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
