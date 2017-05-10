@@ -11,7 +11,7 @@ public class ClaseControlador implements ActionListener {
 		this.objVista = objVista;
 		this.objVista2 = objVista2;
 		this.objVista3 = objVista3;
-		actionListener(this); // Escuchador para el botÃ³n 
+		actionListener(this); // Escuchador para el botón 
 	}
 
 	@Override 
@@ -22,7 +22,6 @@ public class ClaseControlador implements ActionListener {
 		int B;
 		int totalUs=0;
 		int totalCr=0;
-		int as=0;
 
 		try {
 			dineroActual = objVista.tuDinero.getText();
@@ -34,8 +33,8 @@ public class ClaseControlador implements ActionListener {
 			if(objEvento.getSource()==objVista.botonSiguiente){
 				objVista.setVisible(false);
 				objVista2.setVisible(true);
-				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
-				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");
+				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
 			}
 
 
@@ -44,18 +43,19 @@ public class ClaseControlador implements ActionListener {
 				if(A==1){
 					objVista3.setVisible(true);
 					objVista2.pedirCarta.setEnabled(false);
-					objVista2.plantarse.setEnabled(false);
-					A=as;
+					objVista2.plantarse.setEnabled(false);						
+				}else{
+					objVista2.pedirCarta.setEnabled(true);
+					objVista2.plantarse.setEnabled(true);
+					totalUs=objModelo.totalCartaUs(A);
+					objVista2.sumaUsuario.setText("Tienes: "+totalUs);
+					if(totalUs>21){
+						System.out.println("TE PAZAAAZTE");
+						objVista2.pedirCarta.setEnabled(false);
+						objVista2.plantarse.setEnabled(false);
+					}
 				}
-				objVista2.pedirCarta.setEnabled(true);
-				objVista2.plantarse.setEnabled(true);
-				totalUs=objModelo.totalCartaUs(A);
-				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
-				if(totalUs>21){
-					System.out.println("TE PAZAAAZTE");
-					objVista2.pedirCarta.setEnabled(false);
-					objVista2.plantarse.setEnabled(false);
-				}
+				
 			}
 
 			if(objEvento.getSource()==objVista2.plantarse){
@@ -71,16 +71,34 @@ public class ClaseControlador implements ActionListener {
 				}
 				objVista2.plantarse.setEnabled(false);
 			}
-
+			
 			if(objEvento.getSource()==objVista3.uno){
 				objVista3.setVisible(false);
-				as=1;
+				A=1;
+				objVista2.pedirCarta.setEnabled(true);
+				objVista2.plantarse.setEnabled(true);
+				totalUs=objModelo.totalCartaUs(A);
+				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
+				if(totalUs>21){
+					System.out.println("TE PAZAAAZTE");
+					objVista2.pedirCarta.setEnabled(false);
+					objVista2.plantarse.setEnabled(false);
+				}
 			}
 			
 			if(objEvento.getSource()==objVista3.once){
 				objVista3.setVisible(false);
-				as=11;
-			}			
+				A=11;
+				objVista2.pedirCarta.setEnabled(true);
+				objVista2.plantarse.setEnabled(true);
+				totalUs=objModelo.totalCartaUs(A);
+				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
+				if(totalUs>21){
+					System.out.println("TE PAZAAAZTE");
+					objVista2.pedirCarta.setEnabled(false);
+					objVista2.plantarse.setEnabled(false);
+				}
+			}		
 		}
 		catch(Exception objExcepcion) {
 			objExcepcion.printStackTrace();

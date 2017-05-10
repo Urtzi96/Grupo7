@@ -4,7 +4,6 @@ public class ClaseModelo {
 	private int totalValorUs;
 	private int totalValorCr;
 	private int carta;//nueva carta
-	private int as;
 	
 	public int Money(int din){
 		dineroActual=din;
@@ -30,12 +29,6 @@ public class ClaseModelo {
 		}else{
 			return false;
 		}
-	}
-	
-	public int as(int a){
-		as=a;
-		
-		return as;
 	}
 
 	public void espera(){

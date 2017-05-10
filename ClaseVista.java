@@ -22,8 +22,8 @@ public class ClaseVista extends JFrame {
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
 	JLabel sumaCroupier= null; 
-	JLabel dineroTotal= null; //El dinero se introducir√° en la primera ventana.
-	JLabel apuesta= null; //La apuesta se realizar√° en la primera ventana.
+	JLabel dineroTotal= null; //El dinero se introducir· en la primera ventana.
+	JLabel apuesta= null; //La apuesta se realizar· en la primera ventana.
 	JLabel sumaUsuario= null; 
 	JButton pedirCarta = null;
 	JButton plantarse = null;
@@ -111,10 +111,10 @@ public class ClaseVista extends JFrame {
 			}
 		});
 
-		sumaCroupier = new JLabel("El croupier tiene "/*a√±adir metodo*/);
+		sumaCroupier = new JLabel("El croupier tiene "/*aÒadir metodo*/);
 		dineroTotal = new JLabel();
 		apuesta = new JLabel();
-		sumaUsuario = new JLabel("Tienes "/*a√±adir metodo*/);
+		sumaUsuario = new JLabel("Tienes "/*aÒadir metodo*/);
 		pedirCarta = new JButton("Pedir Carta");
 		plantarse = new JButton("Plantarse");
 
