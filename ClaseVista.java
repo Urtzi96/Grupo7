@@ -22,8 +22,8 @@ public class ClaseVista extends JFrame {
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
 	JLabel sumaCroupier= null; 
-	JLabel dineroTotal= null; //El dinero se introducir· en la primera ventana.
-	JLabel apuesta= null; //La apuesta se realizar· en la primera ventana.
+	JLabel dineroTotal= null; //El dinero se introducir√° en la primera ventana.
+	JLabel apuesta= null; //La apuesta se realizar√° en la primera ventana.
 	JLabel sumaUsuario= null; 
 	JButton pedirCarta = null;
 	JButton plantarse = null;
@@ -37,8 +37,8 @@ public class ClaseVista extends JFrame {
 	//DECLARACION TERCERA VENTANA
 	Container bloqueContenedor3 = null; 
 	JLabel pregunta=null;
-	JTextField respuesta=null;
-	JButton aceptar=null;
+	JButton uno=null;
+	JButton once=null;
 	private static JPanel panel20 = new JPanel();
 	private static JPanel panel21 = new JPanel();
 	private static JPanel panel22 = new JPanel();
@@ -111,10 +111,10 @@ public class ClaseVista extends JFrame {
 			}
 		});
 
-		sumaCroupier = new JLabel("El croupier tiene "/*aÒadir metodo*/);
+		sumaCroupier = new JLabel("El croupier tiene "/*a√±adir metodo*/);
 		dineroTotal = new JLabel();
 		apuesta = new JLabel();
-		sumaUsuario = new JLabel("Tienes "/*aÒadir metodo*/);
+		sumaUsuario = new JLabel("Tienes "/*a√±adir metodo*/);
 		pedirCarta = new JButton("Pedir Carta");
 		plantarse = new JButton("Plantarse");
 
@@ -142,7 +142,7 @@ public class ClaseVista extends JFrame {
 		bloqueContenedor3 = getContentPane(); 
 		setTitle("VALOR DEL AS"); 
 		setLayout(new BorderLayout()); 
-		setSize(200,200);
+		setSize(300,140);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -150,17 +150,17 @@ public class ClaseVista extends JFrame {
 			}
 		});
 
-		pregunta = new JLabel("Que valor quieres que tenga el AS?(11 o 1)"/*aÒadir metodo*/);
-		respuesta = new JTextField("", 8);
-		aceptar = new JButton("ACEPTAR");
+		pregunta = new JLabel("Que valor quieres que tenga el AS?");
+		uno = new JButton("1");
+		once = new JButton("11");
 
 		panel20.add(pregunta);
-		panel21.add(respuesta);	
-		panel22.add(aceptar);
+		panel21.add(uno);
+		panel22.add(once);
 		
 		bloqueContenedor3.add(panel20, BorderLayout.NORTH);
-		bloqueContenedor3.add(panel21, BorderLayout.CENTER);
-		bloqueContenedor3.add(panel22, BorderLayout.SOUTH);
+		bloqueContenedor3.add(panel21, BorderLayout.WEST);
+		bloqueContenedor3.add(panel22, BorderLayout.EAST);
 		
 
 		setVisible(false);
