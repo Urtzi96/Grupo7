@@ -4,6 +4,7 @@ public class ClaseModelo {
 	private int totalValorUs;
 	private int totalValorCr;
 	private int carta;//nueva carta
+	private int as;
 	
 	public int Money(int din){
 		dineroActual=din;
@@ -23,22 +24,18 @@ public class ClaseModelo {
 		return carta;
 	}
 
-	public int as(String valorAs){
-		if(valorAs=="1"){
-			carta=1;
-		}else{
-			carta=11;
-		}
-		
-		return carta;
-	}
-
 	public boolean stop(int B){
 		if(B>=16){
 			return true;
 		}else{
 			return false;
 		}
+	}
+	
+	public int as(int a){
+		as=a;
+		
+		return as;
 	}
 
 	public void espera(){
