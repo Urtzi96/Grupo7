@@ -28,7 +28,7 @@ public class ClaseControlador implements ActionListener {
 			objModelo.Money(Integer.parseInt(dineroActual));
 
 			tuApuesta = objVista.tuApuesta.getText();
-			objModelo.Money(Integer.parseInt(tuApuesta));
+			objModelo.Apuesta(Integer.parseInt(tuApuesta));
 
 			if(objEvento.getSource()==objVista.botonSiguiente){
 				objVista.setVisible(false);
@@ -62,9 +62,6 @@ public class ClaseControlador implements ActionListener {
 				objVista2.pedirCarta.setEnabled(false);
 				while(objModelo.stop(totalCr)==false){
 					B=objModelo.crearCarta();
-					if(B==1){
-						//Croupier elije 1 o 11?
-					}
 					totalCr=objModelo.totalCartaCr(B);
 					objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
 					objModelo.espera();
@@ -98,7 +95,9 @@ public class ClaseControlador implements ActionListener {
 					objVista2.pedirCarta.setEnabled(false);
 					objVista2.plantarse.setEnabled(false);
 				}
-			}		
+			}
+			
+			
 		}
 		catch(Exception objExcepcion) {
 			objExcepcion.printStackTrace();
