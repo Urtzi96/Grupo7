@@ -6,11 +6,13 @@ public class ClaseControlador implements ActionListener {
 	ClaseVista objVista=null;
 	ClaseVista objVista2=null;
 	ClaseVista objVista3=null;
-	public ClaseControlador(ClaseVista objVista, ClaseModelo objModelo, ClaseVista objVista2, ClaseVista objVista3) { 
+	ClaseVista objVista4=null;
+	public ClaseControlador(ClaseVista objVista, ClaseModelo objModelo, ClaseVista objVista2, ClaseVista objVista3, ClaseVista objVista4) { 
 		this.objModelo = objModelo; 
 		this.objVista = objVista;
 		this.objVista2 = objVista2;
 		this.objVista3 = objVista3;
+		this.objVista4 = objVista4;
 		actionListener(this); // Escuchador para el botón 
 	}
 
@@ -22,6 +24,8 @@ public class ClaseControlador implements ActionListener {
 		int B;
 		int totalUs=0;
 		int totalCr=0;
+		int c1=0;
+		int c2=0;
 
 		try {
 			dineroActual = objVista.tuDinero.getText();
@@ -31,10 +35,12 @@ public class ClaseControlador implements ActionListener {
 			objModelo.Apuesta(Integer.parseInt(tuApuesta));
 
 			if(objEvento.getSource()==objVista.botonSiguiente){
-				objVista.setVisible(false);
-				objVista2.setVisible(true);
-				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
-				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
+				if(Integer.parseInt(dineroActual)>=Integer.parseInt(tuApuesta)){
+					objVista.setVisible(false);
+					objVista2.setVisible(true);
+					objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+					objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
+				}
 			}
 
 
@@ -50,12 +56,14 @@ public class ClaseControlador implements ActionListener {
 					totalUs=objModelo.totalCartaUs(A);
 					objVista2.sumaUsuario.setText("Tienes: "+totalUs);
 					if(totalUs>21){
-						System.out.println("TE PAZAAAZTE");
 						objVista2.pedirCarta.setEnabled(false);
 						objVista2.plantarse.setEnabled(false);
+						objVista4.ganaspierdes.setText("HAS PERDIDO");
+						dineroActual=Integer.toString(objModelo.resta());
+						objModelo.Money(Integer.parseInt(dineroActual));
+						objVista4.setVisible(true);
 					}
 				}
-				
 			}
 
 			if(objEvento.getSource()==objVista2.plantarse){
@@ -67,6 +75,26 @@ public class ClaseControlador implements ActionListener {
 					objModelo.espera();
 				}
 				objVista2.plantarse.setEnabled(false);
+				
+				c1=objModelo.getUs();
+				c2=objModelo.getCr();
+				
+				if(c2>21){
+					objVista4.ganaspierdes.setText("HAS GANADO");
+					dineroActual=Integer.toString(objModelo.suma());
+					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.setVisible(true);
+				}else if(c1>c2){					
+					objVista4.ganaspierdes.setText("HAS GANADO");
+					dineroActual=Integer.toString(objModelo.suma());
+					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.setVisible(true);
+				}else{
+					objVista4.ganaspierdes.setText("HAS PERDIDO");
+					dineroActual=Integer.toString(objModelo.resta());
+					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.setVisible(true);
+				}
 			}
 			
 			if(objEvento.getSource()==objVista3.uno){
@@ -77,9 +105,12 @@ public class ClaseControlador implements ActionListener {
 				totalUs=objModelo.totalCartaUs(A);
 				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
 				if(totalUs>21){
-					System.out.println("TE PAZAAAZTE");
 					objVista2.pedirCarta.setEnabled(false);
 					objVista2.plantarse.setEnabled(false);
+					objVista4.ganaspierdes.setText("HAS PERDIDO");
+					dineroActual=Integer.toString(objModelo.resta());
+					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.setVisible(true);
 				}
 			}
 			
@@ -91,13 +122,38 @@ public class ClaseControlador implements ActionListener {
 				totalUs=objModelo.totalCartaUs(A);
 				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
 				if(totalUs>21){
-					System.out.println("TE PAZAAAZTE");
 					objVista2.pedirCarta.setEnabled(false);
 					objVista2.plantarse.setEnabled(false);
+					objVista4.ganaspierdes.setText("HAS PERDIDO");
+					dineroActual=Integer.toString(objModelo.resta());
+					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.setVisible(true);
 				}
 			}
 			
+			if(objEvento.getSource()==objVista4.otrasi){
+				totalUs=0;
+				objModelo.setUs(totalUs);
+				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
+				
+				totalCr=0;
+				objModelo.setCr(totalCr);
+				objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
+				
+				dineroActual=Integer.toString(objModelo.getMoney());
+				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+				
+				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
+				
+				objVista2.pedirCarta.setEnabled(true);
+				objVista2.plantarse.setEnabled(true);
+				
+				objVista4.setVisible(false);
+			}
 			
+			if(objEvento.getSource()==objVista4.otrano){
+				
+			}			
 		}
 		catch(Exception objExcepcion) {
 			objExcepcion.printStackTrace();
@@ -109,5 +165,7 @@ public class ClaseControlador implements ActionListener {
 		objVista2.plantarse.addActionListener(escuchador);
 		objVista3.uno.addActionListener(escuchador);
 		objVista3.once.addActionListener(escuchador);
+		objVista4.otrasi.addActionListener(escuchador);
+		objVista4.otrano.addActionListener(escuchador);
 	}
 }

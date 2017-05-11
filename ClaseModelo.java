@@ -1,3 +1,4 @@
+
 public class ClaseModelo {
 	private int dineroActual;//dinero que tiene el usuario
 	private int apuesta;//dinero que apuesta en la partida
@@ -15,6 +16,10 @@ public class ClaseModelo {
 		this.apuesta=apues;
 
 		return apuesta;
+	}
+	
+	public int getMoney(){
+		return dineroActual;
 	}
 
 	public int crearCarta(){
@@ -49,7 +54,7 @@ public class ClaseModelo {
 
 		return totalValorUs;
 	}
-	
+
 	public int totalCartaCr(int A){
 		totalValorCr=totalValorCr+A;
 
@@ -62,27 +67,29 @@ public class ClaseModelo {
 		return dineroActual;
 	}
 
-	public boolean ganasPierdes(int A, int B){
-		if(A>21){
-			return false;
-		}else{
-			if(B>21){
-				return true;
-			}else{
-				if(A>B){
-					return true;
-				}else{
-					return false;
-				}
-			}
-		}
-	}
-
-	public int ganancias(boolean ganasPierdes){
-		if(ganasPierdes==true){
-			dineroActual=dineroActual+(apuesta*2);
-		}
+	public int suma(){
+		dineroActual=dineroActual+apuesta;
 
 		return dineroActual;
+	}
+
+	public int getUs(){
+		return totalValorUs;
+	}
+	
+	public int getCr(){
+		return totalValorCr;
+	}
+	
+	public void setUs(int A){
+		totalValorUs=A;
+	}
+	
+	public void setCr(int A){
+		totalValorCr=A;
+	}
+
+	public void cerrar() {
+		System.exit(0);
 	}
 }
