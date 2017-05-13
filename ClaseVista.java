@@ -58,10 +58,12 @@ public class ClaseVista extends JFrame {
 	JLabel otrapartida=null;
 	JButton otrasi=null;
 	JButton otrano=null;
+	JLabel tienes=null;
 	private static JPanel panel23 = new JPanel();
 	private static JPanel panel24 = new JPanel();
 	private static JPanel panel25 = new JPanel();
 	private static JPanel panel26 = new JPanel();
+	private static JPanel panel27 = new JPanel();
 
 
 	// IMPORTANDO VALORES EN PRIMERA VENTANA
@@ -192,16 +194,19 @@ public class ClaseVista extends JFrame {
 		otrapartida = new JLabel("Quieres jugar otra vez?");
 		otrasi = new JButton("SI");
 		otrano = new JButton("NO");
+		tienes = new JLabel();
 
 		panel23.add(ganaspierdes);
 		panel24.add(otrapartida);
 		panel25.add(otrasi);
 		panel26.add(otrano);
+		panel27.add(tienes);
 
 		bloqueContenedor4.add(panel23, BorderLayout.NORTH);
 		bloqueContenedor4.add(panel24, BorderLayout.CENTER);
 		bloqueContenedor4.add(panel25, BorderLayout.EAST);
 		bloqueContenedor4.add(panel26, BorderLayout.WEST);
+		bloqueContenedor4.add(panel27, BorderLayout.SOUTH);
 
 		setVisible(false);
 	}

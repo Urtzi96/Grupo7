@@ -26,15 +26,15 @@ public class ClaseControlador implements ActionListener {
 		int totalCr=0;
 		int c1=0;
 		int c2=0;
+		int con;
 
 		try {
 			dineroActual = objVista.tuDinero.getText();
-			objModelo.Money(Integer.parseInt(dineroActual));
-
 			tuApuesta = objVista.tuApuesta.getText();
-			objModelo.Apuesta(Integer.parseInt(tuApuesta));
 
 			if(objEvento.getSource()==objVista.botonSiguiente){
+				objModelo.Money(Integer.parseInt(dineroActual));
+				objModelo.Apuesta(Integer.parseInt(tuApuesta));
 				if(Integer.parseInt(dineroActual)>=Integer.parseInt(tuApuesta)){
 					objVista.setVisible(false);
 					objVista2.setVisible(true);
@@ -61,7 +61,15 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS PERDIDO");
 						dineroActual=Integer.toString(objModelo.resta());
 						objModelo.Money(Integer.parseInt(dineroActual));
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
+						
+						con=0;
+						con=objModelo.condicion();
+						if(con<=0){
+							objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
+							objVista4.otrasi.setEnabled(false);
+						}
 					}
 				}
 			}
@@ -83,17 +91,41 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS GANADO");
 					dineroActual=Integer.toString(objModelo.suma());
 					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
+					
+					con=0;
+					con=objModelo.condicion();
+					if(con<=0){
+						objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
+						objVista4.otrasi.setEnabled(false);
+					}
 				}else if(c1>c2){					
 					objVista4.ganaspierdes.setText("HAS GANADO");
 					dineroActual=Integer.toString(objModelo.suma());
 					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
+					
+					con=0;
+					con=objModelo.condicion();
+					if(con<=0){
+						objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
+						objVista4.otrasi.setEnabled(false);
+					}
 				}else{
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
+					
+					con=0;
+					con=objModelo.condicion();
+					if(con<=0){
+						objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
+						objVista4.otrasi.setEnabled(false);
+					}
 				}
 			}
 			
@@ -110,7 +142,15 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
+					
+					con=0;
+					con=objModelo.condicion();
+					if(con<=0){
+						objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
+						objVista4.otrasi.setEnabled(false);
+					}
 				}
 			}
 			
@@ -127,7 +167,15 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
+					
+					con=0;
+					con=objModelo.condicion();
+					if(con<=0){
+						objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
+						objVista4.otrasi.setEnabled(false);
+					}
 				}
 			}
 			
@@ -152,7 +200,7 @@ public class ClaseControlador implements ActionListener {
 			}
 			
 			if(objEvento.getSource()==objVista4.otrano){
-				
+				System.exit(0);
 			}			
 		}
 		catch(Exception objExcepcion) {

@@ -5,7 +5,7 @@ public class ClaseModelo {
 	private int totalValorUs;
 	private int totalValorCr;
 	private int carta;//nueva carta
-	
+
 	public int Money(int din){
 		dineroActual=din;
 
@@ -17,7 +17,7 @@ public class ClaseModelo {
 
 		return apuesta;
 	}
-	
+
 	public int getMoney(){
 		return dineroActual;
 	}
@@ -29,11 +29,16 @@ public class ClaseModelo {
 	}
 
 	public boolean stop(int B){
-		if(B>=16){
-			return true;
-		}else{
+		if(B<totalValorUs){
 			return false;
+		}else{
+			if(B>=16){
+				return true;
+			}else{
+				return false;
+			}
 		}
+
 	}
 
 	public void espera(){
@@ -76,20 +81,20 @@ public class ClaseModelo {
 	public int getUs(){
 		return totalValorUs;
 	}
-	
+
 	public int getCr(){
 		return totalValorCr;
 	}
-	
+
 	public void setUs(int A){
 		totalValorUs=A;
 	}
-	
+
 	public void setCr(int A){
 		totalValorCr=A;
 	}
-
-	public void cerrar() {
-		System.exit(0);
+	
+	public int condicion(){
+		return dineroActual-apuesta;
 	}
 }
