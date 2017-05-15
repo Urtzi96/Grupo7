@@ -13,7 +13,7 @@ public class ClaseControlador implements ActionListener {
 		this.objVista2 = objVista2;
 		this.objVista3 = objVista3;
 		this.objVista4 = objVista4;
-		actionListener(this); // Escuchador para el botÃ³n 
+		actionListener(this); // Escuchador para el botón 
 	}
 
 	@Override 
@@ -38,8 +38,8 @@ public class ClaseControlador implements ActionListener {
 				if(Integer.parseInt(dineroActual)>=Integer.parseInt(tuApuesta)){
 					objVista.setVisible(false);
 					objVista2.setVisible(true);
-					objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
-					objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");
+					objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+					objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
 				}
 			}
 
@@ -61,9 +61,9 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS PERDIDO");
 						dineroActual=Integer.toString(objModelo.resta());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
-						
+
 						con=0;
 						con=objModelo.condicion();
 						if(con<0){
@@ -83,17 +83,17 @@ public class ClaseControlador implements ActionListener {
 					objModelo.espera();
 				}
 				objVista2.plantarse.setEnabled(false);
-				
+
 				c1=objModelo.getUs();
 				c2=objModelo.getCr();
-				
+
 				if(c2>21){
 					objVista4.ganaspierdes.setText("HAS GANADO");
 					dineroActual=Integer.toString(objModelo.suma());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
-					
+
 					con=0;
 					con=objModelo.condicion();
 					if(con<0){
@@ -104,22 +104,27 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS GANADO");
 					dineroActual=Integer.toString(objModelo.suma());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
-					
+
 					con=0;
 					con=objModelo.condicion();
 					if(con<0){
 						objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
 						objVista4.otrasi.setEnabled(false);
 					}
+				}else if(c1==c2){
+					objVista4.ganaspierdes.setText("EMPATE");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
+					objVista4.setVisible(true);
+
 				}else{
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
-					
+
 					con=0;
 					con=objModelo.condicion();
 					if(con<0){
@@ -128,7 +133,7 @@ public class ClaseControlador implements ActionListener {
 					}
 				}
 			}
-			
+
 			if(objEvento.getSource()==objVista3.uno){
 				objVista3.setVisible(false);
 				A=1;
@@ -142,9 +147,9 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
-					
+
 					con=0;
 					con=objModelo.condicion();
 					if(con<0){
@@ -153,7 +158,7 @@ public class ClaseControlador implements ActionListener {
 					}
 				}
 			}
-			
+
 			if(objEvento.getSource()==objVista3.once){
 				objVista3.setVisible(false);
 				A=11;
@@ -167,9 +172,9 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
-					
+
 					con=0;
 					con=objModelo.condicion();
 					if(con<0){
@@ -178,27 +183,27 @@ public class ClaseControlador implements ActionListener {
 					}
 				}
 			}
-			
+
 			if(objEvento.getSource()==objVista4.otrasi){
 				totalUs=0;
 				objModelo.setUs(totalUs);
 				objVista2.sumaUsuario.setText("Tienes: "+totalUs);
-				
+
 				totalCr=0;
 				objModelo.setCr(totalCr);
 				objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
-				
+
 				dineroActual=Integer.toString(objModelo.getMoney());
-				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
-				
-				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");
-				
+				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+
+				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
+
 				objVista2.pedirCarta.setEnabled(true);
 				objVista2.plantarse.setEnabled(true);
-				
+
 				objVista4.setVisible(false);
 			}
-			
+
 			if(objEvento.getSource()==objVista4.otrano){
 				System.exit(0);
 			}			

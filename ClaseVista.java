@@ -4,21 +4,23 @@ import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JButton; 
-import javax.swing.JFrame; 
-import javax.swing.JLabel; 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class ClaseVista extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	//DECLARACION PRIMERA VENTANA
-	Container bloqueContenedor2 = null; 
-	JLabel dineroVenido = null; //Con cuanto dinero has venido
-	JLabel dineroApuesta = null; //Cuanto vas a apostar
-	JTextField tuDinero= null; 
-	JTextField tuApuesta= null; 
+	// DECLARACION PRIMERA VENTANA
+	Container bloqueContenedor2 = null;
+	JLabel dineroVenido = null; // Con cuanto dinero has venido
+	JLabel dineroApuesta = null; // Cuanto vas a apostar
+	JTextField tuDinero = null;
+	JTextField tuApuesta = null;
 	JButton botonSiguiente = null;
 	private static JPanel panel5 = new JPanel();
 	private static JPanel panel6 = new JPanel();
@@ -26,14 +28,15 @@ public class ClaseVista extends JFrame {
 	private static JPanel panel8 = new JPanel();
 	private static JPanel panel9 = new JPanel();
 
-	//DECLARACION SEGUNDA VENTANA
-	Container bloqueContenedor = null; 
+	// DECLARACION SEGUNDA VENTANA
+	Container bloqueContenedor = null;
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
-	JLabel sumaCroupier= null; 
-	JLabel dineroTotal= null; //El dinero se introducirá en la primera ventana.
-	JLabel apuesta= null; //La apuesta se realizará en la primera ventana.
-	JLabel sumaUsuario= null; 
+	JLabel sumaCroupier = null;
+	JLabel dineroTotal = null; // El dinero se introducirá en la primera
+								// ventana.
+	JLabel apuesta = null; // La apuesta se realizará en la primera ventana.
+	JLabel sumaUsuario = null;
 	JButton pedirCarta = null;
 	JButton plantarse = null;
 	private static JPanel panel1 = new JPanel();
@@ -42,36 +45,37 @@ public class ClaseVista extends JFrame {
 	private static JPanel panel4 = new JPanel();
 	private static JPanel panel10 = new JPanel();
 	private static JPanel panel11 = new JPanel();
+	
+	
 
-	//DECLARACION TERCERA VENTANA
-	Container bloqueContenedor3 = null; 
-	JLabel pregunta=null;
-	JButton uno=null;
-	JButton once=null;
+	// DECLARACION TERCERA VENTANA
+	Container bloqueContenedor3 = null;
+	JLabel pregunta = null;
+	JButton uno = null;
+	JButton once = null;
 	private static JPanel panel20 = new JPanel();
 	private static JPanel panel21 = new JPanel();
 	private static JPanel panel22 = new JPanel();
 
-	//DECLARACION CUARTA VENTANA
-	Container bloqueContenedor4 = null; 
-	JLabel ganaspierdes=null;
-	JLabel otrapartida=null;
-	JButton otrasi=null;
-	JButton otrano=null;
-	JLabel tienes=null;
+	// DECLARACION CUARTA VENTANA
+	Container bloqueContenedor4 = null;
+	JLabel ganaspierdes = null;
+	JLabel otrapartida = null;
+	JButton otrasi = null;
+	JButton otrano = null;
+	JLabel tienes = null;
 	private static JPanel panel23 = new JPanel();
 	private static JPanel panel24 = new JPanel();
 	private static JPanel panel25 = new JPanel();
 	private static JPanel panel26 = new JPanel();
 	private static JPanel panel27 = new JPanel();
 
-
 	// IMPORTANDO VALORES EN PRIMERA VENTANA
-	public ClaseVista(){
-		bloqueContenedor2 = getContentPane(); 
-		setTitle("Black Jack"); 
-		setLayout(new GridLayout(0,1));
-		setSize(700,700);
+	public ClaseVista() {
+		bloqueContenedor2 = getContentPane();
+		setTitle("Black Jack");
+		setLayout(new GridLayout(0, 1));
+		setSize(700, 700);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -93,10 +97,9 @@ public class ClaseVista extends JFrame {
 
 		bloqueContenedor2.add(panel5);
 		bloqueContenedor2.add(panel7);
-		bloqueContenedor2.add(panel6); 
-		bloqueContenedor2.add(panel8); 
-		bloqueContenedor2.add(panel9); 
-
+		bloqueContenedor2.add(panel6);
+		bloqueContenedor2.add(panel8);
+		bloqueContenedor2.add(panel9);
 
 		dineroVenido.setHorizontalAlignment(JLabel.CENTER);
 		dineroApuesta.setHorizontalAlignment(JLabel.CENTER);
@@ -108,23 +111,25 @@ public class ClaseVista extends JFrame {
 
 	}
 
-	//IMPORTANDO VALORES EN SEGUNDA VENTANA
+	// IMPORTANDO VALORES EN SEGUNDA VENTANA
 	public ClaseVista(boolean cambioVentana) {
-		bloqueContenedor = getContentPane(); 
-		setTitle("Black Jack"); 
-		setLayout(new BorderLayout()); 
-		setSize(700,700);
+		bloqueContenedor = getContentPane();
+		setTitle("Black Jack");
+		setLayout(new BorderLayout());
+		setSize(900, 506);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
 		});
+		
+		
 
-		sumaCroupier = new JLabel("El croupier tiene "/*añadir metodo*/);
+		sumaCroupier = new JLabel("El croupier tiene "/* añadir metodo */);
 		dineroTotal = new JLabel();
 		apuesta = new JLabel();
-		sumaUsuario = new JLabel("Tienes "/*añadir metodo*/);
+		sumaUsuario = new JLabel("Tienes "/* añadir metodo */);
 		pedirCarta = new JButton("Pedir Carta");
 		plantarse = new JButton("Plantarse");
 
@@ -135,25 +140,31 @@ public class ClaseVista extends JFrame {
 		panel10.add(pedirCarta);
 		panel11.add(plantarse);
 
-
-		bloqueContenedor.add(panel1, BorderLayout.NORTH);
+		bloqueContenedor.add(panel3, BorderLayout.NORTH);
 		dineroTotal.setHorizontalAlignment(JLabel.RIGHT);
 		bloqueContenedor.add(panel2, BorderLayout.NORTH);
-		bloqueContenedor.add(panel1, BorderLayout.CENTER); 
+		bloqueContenedor.add(panel1, BorderLayout.CENTER);
 		bloqueContenedor.add(panel4, BorderLayout.SOUTH);
 		bloqueContenedor.add(panel10, BorderLayout.WEST);
 		bloqueContenedor.add(panel11, BorderLayout.EAST);
 
+		((JPanel) getContentPane()).setOpaque(false);
+		ImageIcon uno = new ImageIcon(this.getClass().getResource(
+				"/Imagenes/imagen.png"));
+		JLabel fondo = new JLabel();
+		fondo.setIcon(uno);
+		getLayeredPane().add(fondo, JLayeredPane.FRAME_CONTENT_LAYER);
+		fondo.setBounds(0, 0, uno.getIconWidth(), uno.getIconHeight());
 
 		setVisible(cambioVentana);
 	}
 
-	//IMPORTANDO VALORES EN TERCERA VENTANA
+	// IMPORTANDO VALORES EN TERCERA VENTANA
 	public ClaseVista(int A) {
-		bloqueContenedor3 = getContentPane(); 
-		setTitle("VALOR DEL AS"); 
-		setLayout(new BorderLayout()); 
-		setSize(300,140);
+		bloqueContenedor3 = getContentPane();
+		setTitle("VALOR DEL AS");
+		setLayout(new BorderLayout());
+		setSize(300, 140);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -173,16 +184,15 @@ public class ClaseVista extends JFrame {
 		bloqueContenedor3.add(panel21, BorderLayout.WEST);
 		bloqueContenedor3.add(panel22, BorderLayout.EAST);
 
-
 		setVisible(false);
 	}
 
-	//IMPORTANDO VALORES EN CUARTA VENTANA
+	// IMPORTANDO VALORES EN CUARTA VENTANA
 	public ClaseVista(String A) {
-		bloqueContenedor4 = getContentPane(); 
-		setTitle(A); 
-		setLayout(new BorderLayout()); 
-		setSize(300,140);
+		bloqueContenedor4 = getContentPane();
+		setTitle(A);
+		setLayout(new BorderLayout());
+		setSize(300, 140);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
