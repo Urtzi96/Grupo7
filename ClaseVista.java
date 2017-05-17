@@ -33,9 +33,9 @@ public class ClaseVista extends JFrame {
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
 	JLabel sumaCroupier = null;
-	JLabel dineroTotal = null; // El dinero se introducir· en la primera
+	JLabel dineroTotal = null; // El dinero se introducir√° en la primera
 								// ventana.
-	JLabel apuesta = null; // La apuesta se realizar· en la primera ventana.
+	JLabel apuesta = null; // La apuesta se realizar√° en la primera ventana.
 	JLabel sumaUsuario = null;
 	JButton pedirCarta = null;
 	JButton plantarse = null;
@@ -82,6 +82,7 @@ public class ClaseVista extends JFrame {
 				System.exit(0);
 			}
 		});
+		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 
 		dineroVenido = new JLabel("Con cuanto dinero has venido?");
 		dineroApuesta = new JLabel("Cuanto dinero vas a apostar?");
@@ -123,13 +124,14 @@ public class ClaseVista extends JFrame {
 				System.exit(0);
 			}
 		});
+		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 		
 		
 
-		sumaCroupier = new JLabel("El croupier tiene "/* aÒadir metodo */);
+		sumaCroupier = new JLabel("El croupier tiene "/* a√±adir metodo */);
 		dineroTotal = new JLabel();
 		apuesta = new JLabel();
-		sumaUsuario = new JLabel("Tienes "/* aÒadir metodo */);
+		sumaUsuario = new JLabel("Tienes "/* a√±adir metodo */);
 		pedirCarta = new JButton("Pedir Carta");
 		plantarse = new JButton("Plantarse");
 
@@ -171,6 +173,7 @@ public class ClaseVista extends JFrame {
 				System.exit(0);
 			}
 		});
+		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 
 		pregunta = new JLabel("Que valor quieres que tenga el AS?");
 		uno = new JButton("1");
@@ -199,6 +202,7 @@ public class ClaseVista extends JFrame {
 				System.exit(0);
 			}
 		});
+		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 
 		ganaspierdes = new JLabel();
 		otrapartida = new JLabel("Quieres jugar otra vez?");
