@@ -35,7 +35,7 @@ public class ClaseModelo {
 		return valorC;
 	}
 
-	public boolean stop(int B){
+	public boolean stop(int B){//Probar sin parametro y con atributo totalValorCr
 		if(B<totalValorUs){
 			return false;
 		}else{
