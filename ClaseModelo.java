@@ -7,16 +7,12 @@ public class ClaseModelo {
 	private int carta;//nueva carta
 	private int valorC;
 
-	public int Money(int din){
-		dineroActual=din;
-
-		return dineroActual;
+	public void Money(int din){
+		dineroActual=din;;
 	}
 
-	public int Apuesta(int apues){
+	public void Apuesta(int apues){
 		this.apuesta=apues;
-
-		return apuesta;
 	}
 
 	public int getMoney(){
@@ -51,16 +47,21 @@ public class ClaseModelo {
 		}
 
 	}
+	
+	public int getUs(){
+		return totalValorUs;
+	}
 
-	public void espera(){
-		try{
+	public int getCr(){
+		return totalValorCr;
+	}
 
-			Thread.sleep(1000);
+	public void setUs(int A){
+		totalValorUs=A;
+	}
 
-		}catch(Exception e){
-
-			System.out.println("Uyyyyyyyyy casi.... : "+e.getMessage());
-		}
+	public void setCr(int A){
+		totalValorCr=A;
 	}
 
 	public int totalCartaUs(int A){
@@ -87,22 +88,6 @@ public class ClaseModelo {
 		return dineroActual;
 	}
 
-	public int getUs(){
-		return totalValorUs;
-	}
-
-	public int getCr(){
-		return totalValorCr;
-	}
-
-	public void setUs(int A){
-		totalValorUs=A;
-	}
-
-	public void setCr(int A){
-		totalValorCr=A;
-	}
-	
 	public int condicion(){
 		return dineroActual-apuesta;
 	}
