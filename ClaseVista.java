@@ -1,6 +1,8 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
-import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -74,8 +76,9 @@ public class ClaseVista extends JFrame {
 	public ClaseVista() {
 		bloqueContenedor2 = getContentPane();
 		setTitle("Black Jack");
-		setLayout(new GridLayout(0, 1));
-		setSize(700, 700);
+		setLayout(new FlowLayout());
+		bloqueContenedor2.setLayout(null);
+		setSize(645, 255);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -84,29 +87,47 @@ public class ClaseVista extends JFrame {
 		});
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 
-		dineroVenido = new JLabel("Con cuanto dinero has venido?");
-		dineroApuesta = new JLabel("Cuanto dinero vas a apostar?");
+		dineroVenido = new JLabel("Tu dinero:");
+		dineroVenido.setBounds(446,10,174,23);
+		dineroVenido.setFont(new Font("Fipps", Font.ITALIC, 15));
+		dineroVenido.setForeground(Color.WHITE);
+		
+		dineroApuesta = new JLabel("Tu apuesta:");
+		dineroApuesta.setBounds(446,76,174,23);
+		dineroApuesta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		dineroApuesta.setForeground(Color.WHITE);
+		
 		tuDinero = new JTextField("", 8);
+		tuDinero.setBounds(446,41,160,26);
+		tuDinero.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		tuApuesta = new JTextField("", 8);
+		tuApuesta.setBounds(446,118,160,26);
+		tuApuesta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		botonSiguiente = new JButton("Jugar");
+		botonSiguiente.setBounds(446,162,154,48);
+		botonSiguiente.setFont(new Font("Fipps", Font.ITALIC, 15));
 
 		panel5.add(dineroVenido);
 		panel6.add(dineroApuesta);
 		panel7.add(tuDinero);
 		panel8.add(tuApuesta);
 		panel9.add(botonSiguiente);
-
-		bloqueContenedor2.add(panel5);
-		bloqueContenedor2.add(panel7);
-		bloqueContenedor2.add(panel6);
-		bloqueContenedor2.add(panel8);
-		bloqueContenedor2.add(panel9);
-
-		dineroVenido.setHorizontalAlignment(JLabel.CENTER);
-		dineroApuesta.setHorizontalAlignment(JLabel.CENTER);
-		tuDinero.setHorizontalAlignment(JTextField.CENTER);
-		tuApuesta.setHorizontalAlignment(JTextField.CENTER);
-		botonSiguiente.setHorizontalAlignment(JButton.CENTER);
+		
+		bloqueContenedor2.add(dineroVenido);
+		bloqueContenedor2.add(dineroApuesta);	
+		bloqueContenedor2.add(tuDinero);	
+		bloqueContenedor2.add(tuApuesta);	
+		bloqueContenedor2.add(botonSiguiente);
+		
+		((JPanel) getContentPane()).setOpaque(false);
+		ImageIcon uno = new ImageIcon(this.getClass().getResource(
+				"/Imagenes/las-vegas.jpg"));
+		JLabel fondo = new JLabel();
+		fondo.setIcon(uno);
+		getLayeredPane().add(fondo, JLayeredPane.FRAME_CONTENT_LAYER);
+		fondo.setBounds(0, 0, uno.getIconWidth(), uno.getIconHeight());
 
 		setVisible(true);
 
@@ -116,8 +137,9 @@ public class ClaseVista extends JFrame {
 	public ClaseVista(boolean cambioVentana) {
 		bloqueContenedor = getContentPane();
 		setTitle("Black Jack");
-		setLayout(new BorderLayout());
-		setSize(900, 506);
+		setLayout(new FlowLayout());
+		bloqueContenedor.setLayout(null);
+		setSize(900, 556);
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -129,11 +151,28 @@ public class ClaseVista extends JFrame {
 		
 
 		sumaCroupier = new JLabel("El croupier tiene "/* añadir metodo */);
+		sumaCroupier.setBounds(338,16,193,36);
+		sumaCroupier.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		dineroTotal = new JLabel();
+		dineroTotal.setBounds(692,20,154,36);
+		dineroTotal.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		apuesta = new JLabel();
+		apuesta.setBounds(374,240,145,29);
+		apuesta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		sumaUsuario = new JLabel("Tienes "/* añadir metodo */);
+		sumaUsuario.setBounds(357,487,169,33);
+		sumaUsuario.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		pedirCarta = new JButton("Pedir Carta");
+		pedirCarta.setBounds(92,365,136,54);
+		pedirCarta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		
 		plantarse = new JButton("Plantarse");
+		plantarse.setBounds(680,365,136,54);
+		plantarse.setFont(new Font("Fipps", Font.ITALIC, 15));
 
 		panel1.add(sumaCroupier);
 		panel2.add(dineroTotal);
@@ -142,21 +181,20 @@ public class ClaseVista extends JFrame {
 		panel10.add(pedirCarta);
 		panel11.add(plantarse);
 
-		bloqueContenedor.add(panel3, BorderLayout.NORTH);
-		dineroTotal.setHorizontalAlignment(JLabel.RIGHT);
-		bloqueContenedor.add(panel2, BorderLayout.NORTH);
-		bloqueContenedor.add(panel1, BorderLayout.CENTER);
-		bloqueContenedor.add(panel4, BorderLayout.SOUTH);
-		bloqueContenedor.add(panel10, BorderLayout.WEST);
-		bloqueContenedor.add(panel11, BorderLayout.EAST);
+		bloqueContenedor.add(sumaCroupier);
+		bloqueContenedor.add(dineroTotal);	
+		bloqueContenedor.add(apuesta);	
+		bloqueContenedor.add(sumaUsuario);	
+		bloqueContenedor.add(pedirCarta);	
+		bloqueContenedor.add(plantarse);	
 
 		((JPanel) getContentPane()).setOpaque(false);
-		ImageIcon uno = new ImageIcon(this.getClass().getResource(
-				"/Imagenes/imagen.png"));
-		JLabel fondo = new JLabel();
-		fondo.setIcon(uno);
-		getLayeredPane().add(fondo, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo.setBounds(0, 0, uno.getIconWidth(), uno.getIconHeight());
+		ImageIcon dos = new ImageIcon(this.getClass().getResource(
+				"/Imagenes/imagen.jpg"));
+		JLabel fondo2 = new JLabel();
+		fondo2.setIcon(dos);
+		getLayeredPane().add(fondo2, JLayeredPane.FRAME_CONTENT_LAYER);
+		fondo2.setBounds(0, 0, dos.getIconWidth(), dos.getIconHeight());
 
 		setVisible(cambioVentana);
 	}

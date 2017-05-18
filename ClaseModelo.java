@@ -5,6 +5,7 @@ public class ClaseModelo {
 	private int totalValorUs;
 	private int totalValorCr;
 	private int carta;//nueva carta
+	private int valorC;
 
 	public int Money(int din){
 		dineroActual=din;
@@ -23,9 +24,19 @@ public class ClaseModelo {
 	}
 
 	public int crearCarta(){
-		carta=(int)(Math.random()*10+1);
+		carta=(int)(Math.random()*13+1);
 
 		return carta;
+	}
+	
+	public int valorC(int car){
+		if(car>10){
+			valorC=10;
+		}else{
+			valorC=car;
+		}
+
+		return valorC;
 	}
 
 	public boolean stop(int B){
@@ -49,8 +60,6 @@ public class ClaseModelo {
 		}catch(Exception e){
 
 			System.out.println("Uyyyyyyyyy casi.... : "+e.getMessage());
-
-			return;
 		}
 	}
 

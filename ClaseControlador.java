@@ -27,6 +27,8 @@ public class ClaseControlador implements ActionListener {
 		int c1=0;
 		int c2=0;
 		int con;
+		int cartaA;
+		int cartaB;
 
 		try {
 			dineroActual = objVista.tuDinero.getText();
@@ -45,7 +47,8 @@ public class ClaseControlador implements ActionListener {
 
 
 			if(objEvento.getSource()==objVista2.pedirCarta){
-				A=objModelo.crearCarta();
+				cartaA=objModelo.crearCarta();
+				A=objModelo.valorC(cartaA);
 				if(A==1){
 					objVista3.setVisible(true);
 					objVista2.pedirCarta.setEnabled(false);
@@ -77,7 +80,8 @@ public class ClaseControlador implements ActionListener {
 			if(objEvento.getSource()==objVista2.plantarse){
 				objVista2.pedirCarta.setEnabled(false);
 				while(objModelo.stop(totalCr)==false){
-					B=objModelo.crearCarta();
+					cartaB=objModelo.crearCarta();
+					B=objModelo.valorC(cartaB);
 					totalCr=objModelo.totalCartaCr(B);
 					objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
 					objModelo.espera();
