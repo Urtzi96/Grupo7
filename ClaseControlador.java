@@ -301,7 +301,7 @@ public class ClaseControlador implements ActionListener {
 				dineroActual=Integer.toString(objModelo.getMoney());
 				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
 
-				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
+				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");//Podríamos hacer que se pudiera cambiar la apuesta muy facil, SI NO?
 				
 				objVista2.pedirCarta.setVisible(true);
 				objVista2.pedirCarta.setEnabled(true);
