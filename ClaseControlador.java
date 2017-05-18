@@ -239,7 +239,7 @@ public class ClaseControlador implements ActionListener {
 				}
 			}
 
-			if(objEvento.getSource()==objVista3.uno){
+			if(objEvento.getSource()==objVista3.uno){//En los botones uno y once se repite código. MODULAR??
 				objVista3.setVisible(false);
 				A=1;
 				objVista2.pedirCarta.setEnabled(true);
