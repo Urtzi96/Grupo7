@@ -180,8 +180,8 @@ public class ClaseVista extends JFrame {
 		
 		dineroTotal = new JLabel();
 		dineroTotal.setForeground(Color.white); 
-		dineroTotal.setBounds(692,20,140,50);
-		dineroTotal.setFont(new Font("Bernard MT Condensed", Font.ITALIC|Font.BOLD, 22));
+		dineroTotal.setBounds(680,20,140,80);
+		dineroTotal.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 17));
 		
 		apuesta = new JLabel();
 		apuesta.setForeground(Color.white); 
