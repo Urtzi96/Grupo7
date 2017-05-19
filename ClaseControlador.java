@@ -74,6 +74,9 @@ public class ClaseControlador implements ActionListener {
 						objVista2.setVisible(true);
 						objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
 						objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
+					}else{
+						objVista.tuDinero.setText("Necesitas más dinero");
+						objVista.tuApuesta.setText("Necesitas más dinero");
 					}
 				}
 			}catch(NumberFormatException e){
