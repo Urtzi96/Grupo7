@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ClaseVista extends JFrame {
 	final boolean cambiaAs=false;
@@ -35,9 +37,9 @@ public class ClaseVista extends JFrame {
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
 	JLabel sumaCroupier = null;
-	JLabel dineroTotal = null; // El dinero se introducir· en la primera
+	JLabel dineroTotal = null; // El dinero se introducir√° en la primera
 								// ventana.
-	JLabel apuesta = null; // La apuesta se realizar· en la primera ventana.
+	JLabel apuesta = null; // La apuesta se realizar√° en la primera ventana.
 	JLabel sumaUsuario = null;
 	JButton pedirCarta = null;
 	JButton plantarse = null;
@@ -126,10 +128,20 @@ public class ClaseVista extends JFrame {
 		tuDinero = new JTextField("", 8);
 		tuDinero.setBounds(446,41,160,26);
 		tuDinero.setFont(new Font("Fipps", Font.ITALIC, 15));
+		tuDinero.addMouseListener(new MouseAdapter(){
+            		public void mouseClicked(MouseEvent e){
+                		tuDinero.setText("");
+           		}
+        	});
 		
 		tuApuesta = new JTextField("", 8);
 		tuApuesta.setBounds(446,118,160,26);
 		tuApuesta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		tuApuesta.addMouseListener(new MouseAdapter(){
+            		public void mouseClicked(MouseEvent e){
+                		tuApuesta.setText("");
+            		}
+        	});
 		
 		botonSiguiente = new JButton("Jugar");
 		botonSiguiente.setBounds(446,162,154,48);
@@ -173,7 +185,7 @@ public class ClaseVista extends JFrame {
 		});
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 		
-		sumaCroupier = new JLabel("Croupier: "/* aÒadir metodo */);
+		sumaCroupier = new JLabel("Croupier: "/* a√±adir metodo */);
 		sumaCroupier.setForeground(Color.white); 
 		sumaCroupier.setBounds(357,16,193,36);
 		sumaCroupier.setFont(new Font("Bernard MT Condensed", Font.BOLD, 30));
@@ -188,7 +200,7 @@ public class ClaseVista extends JFrame {
 		apuesta.setBounds(382,240,145,29);
 		apuesta.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 18));
 		
-		sumaUsuario = new JLabel("Tienes: "/* aÒadir metodo */);
+		sumaUsuario = new JLabel("Tienes: "/* a√±adir metodo */);
 		sumaUsuario.setForeground(Color.white); 
 		sumaUsuario.setBounds(370,465,169,33);
 		sumaUsuario.setFont(new Font("Bernard MT Condensed", Font.BOLD, 30));
