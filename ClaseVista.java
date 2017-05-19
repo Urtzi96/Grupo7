@@ -35,9 +35,9 @@ public class ClaseVista extends JFrame {
 	Container cartaCroupier = null;
 	Container cartaUsuario = null;
 	JLabel sumaCroupier = null;
-	JLabel dineroTotal = null; // El dinero se introducir√° en la primera
+	JLabel dineroTotal = null; // El dinero se introducir· en la primera
 								// ventana.
-	JLabel apuesta = null; // La apuesta se realizar√° en la primera ventana.
+	JLabel apuesta = null; // La apuesta se realizar· en la primera ventana.
 	JLabel sumaUsuario = null;
 	JButton pedirCarta = null;
 	JButton plantarse = null;
@@ -115,12 +115,12 @@ public class ClaseVista extends JFrame {
 
 		dineroVenido = new JLabel("Tu dinero:");
 		dineroVenido.setBounds(446,10,174,23);
-		dineroVenido.setFont(new Font("Fipps", Font.ITALIC, 15));
+		dineroVenido.setFont(new Font("Fipps", Font.BOLD, 15));
 		dineroVenido.setForeground(Color.WHITE);
 		
 		dineroApuesta = new JLabel("Tu apuesta:");
 		dineroApuesta.setBounds(446,76,174,23);
-		dineroApuesta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		dineroApuesta.setFont(new Font("Fipps", Font.BOLD, 15));
 		dineroApuesta.setForeground(Color.WHITE);
 		
 		tuDinero = new JTextField("", 8);
@@ -133,7 +133,7 @@ public class ClaseVista extends JFrame {
 		
 		botonSiguiente = new JButton("Jugar");
 		botonSiguiente.setBounds(446,162,154,48);
-		botonSiguiente.setFont(new Font("Fipps", Font.ITALIC, 15));
+		botonSiguiente.setFont(new Font("Fipps", Font.PLAIN, 15));
 
 		panel5.add(dineroVenido);
 		panel6.add(dineroApuesta);
@@ -173,21 +173,25 @@ public class ClaseVista extends JFrame {
 		});
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 		
-		sumaCroupier = new JLabel("El croupier tiene "/* a√±adir metodo */);
-		sumaCroupier.setBounds(338,16,193,36);
-		sumaCroupier.setFont(new Font("Fipps", Font.ITALIC, 15));
+		sumaCroupier = new JLabel("Croupier: "/* aÒadir metodo */);
+		sumaCroupier.setForeground(Color.white); 
+		sumaCroupier.setBounds(357,16,193,36);
+		sumaCroupier.setFont(new Font("Bernard MT Condensed", Font.BOLD, 30));
 		
 		dineroTotal = new JLabel();
-		dineroTotal.setBounds(692,20,154,36);
-		dineroTotal.setFont(new Font("Fipps", Font.ITALIC, 15));
+		dineroTotal.setForeground(Color.white); 
+		dineroTotal.setBounds(692,20,140,50);
+		dineroTotal.setFont(new Font("Bernard MT Condensed", Font.ITALIC|Font.BOLD, 22));
 		
 		apuesta = new JLabel();
-		apuesta.setBounds(374,240,145,29);
-		apuesta.setFont(new Font("Fipps", Font.ITALIC, 15));
+		apuesta.setForeground(Color.white); 
+		apuesta.setBounds(382,240,145,29);
+		apuesta.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 18));
 		
-		sumaUsuario = new JLabel("Tienes "/* a√±adir metodo */);
-		sumaUsuario.setBounds(357,487,169,33);
-		sumaUsuario.setFont(new Font("Fipps", Font.ITALIC, 15));
+		sumaUsuario = new JLabel("Tienes: "/* aÒadir metodo */);
+		sumaUsuario.setForeground(Color.white); 
+		sumaUsuario.setBounds(370,465,169,33);
+		sumaUsuario.setFont(new Font("Bernard MT Condensed", Font.BOLD, 30));
 		
 		pedirCarta = new JButton("Pedir Carta");
 		pedirCarta.setBounds(92,365,136,54);
@@ -225,7 +229,7 @@ public class ClaseVista extends JFrame {
 		fondoas = new JLabel();
 		fondoas.setIcon(as);
 		getLayeredPane().add(fondoas, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondoas.setBounds(381, 323, as.getIconWidth(), as.getIconHeight());
+		fondoas.setBounds(381, 315, as.getIconWidth(), as.getIconHeight());
 		fondoas.setVisible(false);
 		
 		//CARTA 2
@@ -235,7 +239,7 @@ public class ClaseVista extends JFrame {
 		fondo2 = new JLabel();
 		fondo2.setIcon(dos);
 		getLayeredPane().add(fondo2, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo2.setBounds(381, 323, dos.getIconWidth(), dos.getIconHeight());
+		fondo2.setBounds(381, 315, dos.getIconWidth(), dos.getIconHeight());
 		fondo2.setVisible(false);
 		
 		//CARTA 3
@@ -245,7 +249,7 @@ public class ClaseVista extends JFrame {
 		fondo3 = new JLabel();
 		fondo3.setIcon(tres);
 		getLayeredPane().add(fondo3, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo3.setBounds(381, 323, tres.getIconWidth(), tres.getIconHeight());
+		fondo3.setBounds(381, 315, tres.getIconWidth(), tres.getIconHeight());
 		fondo3.setVisible(false);
 		
 		//CARTA 4
@@ -255,7 +259,7 @@ public class ClaseVista extends JFrame {
 		fondo4 = new JLabel();
 		fondo4.setIcon(cuatro);
 		getLayeredPane().add(fondo4, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo4.setBounds(381, 323, cuatro.getIconWidth(), cuatro.getIconHeight());
+		fondo4.setBounds(381, 315, cuatro.getIconWidth(), cuatro.getIconHeight());
 		fondo4.setVisible(false);
 		
 		//CARTA 5
@@ -265,7 +269,7 @@ public class ClaseVista extends JFrame {
 		fondo5 = new JLabel();
 		fondo5.setIcon(cinco);
 		getLayeredPane().add(fondo5, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo5.setBounds(381, 323, cinco.getIconWidth(), cinco.getIconHeight());
+		fondo5.setBounds(381, 315, cinco.getIconWidth(), cinco.getIconHeight());
 		fondo5.setVisible(false);
 		
 		//CARTA 6
@@ -275,7 +279,7 @@ public class ClaseVista extends JFrame {
 		fondo6 = new JLabel();
 		fondo6.setIcon(seis);
 		getLayeredPane().add(fondo6, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo6.setBounds(381, 323, seis.getIconWidth(), seis.getIconHeight());
+		fondo6.setBounds(381, 315, seis.getIconWidth(), seis.getIconHeight());
 		fondo6.setVisible(false);
 		
 		//CARTA 7
@@ -285,7 +289,7 @@ public class ClaseVista extends JFrame {
 		fondo7 = new JLabel();
 		fondo7.setIcon(siete);
 		getLayeredPane().add(fondo7, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo7.setBounds(381, 323, siete.getIconWidth(), siete.getIconHeight());
+		fondo7.setBounds(381, 315, siete.getIconWidth(), siete.getIconHeight());
 		fondo7.setVisible(false);
 		
 		//CARTA 8
@@ -295,7 +299,7 @@ public class ClaseVista extends JFrame {
 		fondo8 = new JLabel();
 		fondo8.setIcon(ocho);
 		getLayeredPane().add(fondo8, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo8.setBounds(381, 323, ocho.getIconWidth(), ocho.getIconHeight());
+		fondo8.setBounds(381, 315, ocho.getIconWidth(), ocho.getIconHeight());
 		fondo8.setVisible(false);
 		
 		//CARTA 9
@@ -305,7 +309,7 @@ public class ClaseVista extends JFrame {
 		fondo9 = new JLabel();
 		fondo9.setIcon(nueve);
 		getLayeredPane().add(fondo9, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo9.setBounds(381, 323, nueve.getIconWidth(), nueve.getIconHeight());
+		fondo9.setBounds(381, 315, nueve.getIconWidth(), nueve.getIconHeight());
 		fondo9.setVisible(false);
 		
 		//CARTA 10
@@ -315,7 +319,7 @@ public class ClaseVista extends JFrame {
 		fondo10 = new JLabel();
 		fondo10.setIcon(diez);
 		getLayeredPane().add(fondo10, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondo10.setBounds(381, 323, diez.getIconWidth(), diez.getIconHeight());
+		fondo10.setBounds(381, 315, diez.getIconWidth(), diez.getIconHeight());
 		fondo10.setVisible(false);
 		
 		//CARTA J
@@ -325,7 +329,7 @@ public class ClaseVista extends JFrame {
 		fondoJ = new JLabel();
 		fondoJ.setIcon(jota);
 		getLayeredPane().add(fondoJ, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondoJ.setBounds(381, 323, jota.getIconWidth(), jota.getIconHeight());
+		fondoJ.setBounds(381, 315, jota.getIconWidth(), jota.getIconHeight());
 		fondoJ.setVisible(false);
 		
 		//CARTA Q
@@ -335,7 +339,7 @@ public class ClaseVista extends JFrame {
 		fondoQ = new JLabel();
 		fondoQ.setIcon(qu);
 		getLayeredPane().add(fondoQ, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondoQ.setBounds(381, 323, qu.getIconWidth(), qu.getIconHeight());
+		fondoQ.setBounds(381, 315, qu.getIconWidth(), qu.getIconHeight());
 		fondoQ.setVisible(false);
 		
 		//CARTA K
@@ -345,7 +349,7 @@ public class ClaseVista extends JFrame {
 		fondoK = new JLabel();
 		fondoK.setIcon(ka);
 		getLayeredPane().add(fondoK, JLayeredPane.FRAME_CONTENT_LAYER);
-		fondoK.setBounds(381, 323, ka.getIconWidth(), ka.getIconHeight());
+		fondoK.setBounds(381, 315, ka.getIconWidth(), ka.getIconHeight());
 		fondoK.setVisible(false);
 
 		//CARTA AS

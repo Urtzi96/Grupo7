@@ -183,7 +183,7 @@ public class ClaseControlador implements ActionListener {
 					B=11;
 				}
 				totalCr=objModelo.totalCartaCr(B);
-				objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
+				objVista2.sumaCroupier.setText("Croupier: "+totalCr);
 				if(objModelo.stop()==true){
 					objVista2.actualizar.setEnabled(false);
 					
@@ -296,7 +296,7 @@ public class ClaseControlador implements ActionListener {
 
 				totalCr=0;
 				objModelo.setCr(totalCr);
-				objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
+				objVista2.sumaCroupier.setText("Croupier: "+totalCr);
 
 				dineroActual=Integer.toString(objModelo.getMoney());
 				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
