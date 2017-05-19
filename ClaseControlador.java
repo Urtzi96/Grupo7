@@ -72,16 +72,16 @@ public class ClaseControlador implements ActionListener {
 					if(Integer.parseInt(dineroActual)>=Integer.parseInt(tuApuesta)){
 						objVista.setVisible(false);
 						objVista2.setVisible(true);
-						objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
-						objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");
+						objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+						objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
 					}else{
-						objVista.tuDinero.setText("Necesitas mÃ¡s dinero");
-						objVista.tuApuesta.setText("Necesitas mÃ¡s dinero");
+						objVista.tuDinero.setText("Necesitas más dinero");
+						objVista.tuApuesta.setText("Necesitas más dinero");
 					}
 				}
 			}catch(NumberFormatException e){
-				objVista.tuDinero.setText("Introduce nÃºmeros");
-				objVista.tuApuesta.setText("Introduce nÃºmeros");
+				objVista.tuDinero.setText("Introduce números");
+				objVista.tuApuesta.setText("Introduce números");
 			}
 
 
@@ -131,7 +131,7 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS PERDIDO");
 						dineroActual=Integer.toString(objModelo.resta());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 						con=0;
@@ -198,39 +198,25 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS GANADO");
 						dineroActual=Integer.toString(objModelo.suma());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
-
-						con=0;//Si ganas, no hace falta esto verdad????????
-						con=objModelo.condicion();
-						if(con<0){
-							objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
-							objVista4.otrasi.setEnabled(false);
-						}
 					}else if(c1>c2){					
 						objVista4.ganaspierdes.setText("HAS GANADO");
 						dineroActual=Integer.toString(objModelo.suma());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
-
-						con=0;
-						con=objModelo.condicion();
-						if(con<0){
-							objVista4.tienes.setText("NO TE QUEDA DINERO PARA APOSTAR");
-							objVista4.otrasi.setEnabled(false);
-						}
 					}else if(c1==c2){
 						objVista4.ganaspierdes.setText("EMPATE");
 						dineroActual=Integer.toString(objModelo.getMoney());
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 					}else{
 						objVista4.ganaspierdes.setText("HAS PERDIDO");
 						dineroActual=Integer.toString(objModelo.resta());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 						con=0;
@@ -243,7 +229,7 @@ public class ClaseControlador implements ActionListener {
 				}
 			}
 
-			if(objEvento.getSource()==objVista3.uno){//En los botones uno y once se repite cÃ³digo. MODULAR??
+			if(objEvento.getSource()==objVista3.uno){
 				objVista3.setVisible(false);
 				A=1;
 				objVista2.pedirCarta.setEnabled(true);
@@ -256,7 +242,7 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
 
 					con=0;
@@ -281,7 +267,7 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
 
 					con=0;
@@ -303,9 +289,9 @@ public class ClaseControlador implements ActionListener {
 				objVista2.sumaCroupier.setText("Croupier: "+totalCr);
 
 				dineroActual=Integer.toString(objModelo.getMoney());
-				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
+				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
 
-				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");//PodrÃ­amos hacer que se pudiera cambiar la apuesta muy facil, SI NO?
+				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
 				
 				objVista2.pedirCarta.setVisible(true);
 				objVista2.pedirCarta.setEnabled(true);

@@ -185,7 +185,7 @@ public class ClaseVista extends JFrame {
 		});
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
 		
-		sumaCroupier = new JLabel("Croupier: "/* aÃ±adir metodo */);
+		sumaCroupier = new JLabel("Croupier: "/* añadir metodo */);
 		sumaCroupier.setForeground(Color.white); 
 		sumaCroupier.setBounds(357,16,193,36);
 		sumaCroupier.setFont(new Font("Bernard MT Condensed", Font.BOLD, 30));
@@ -200,7 +200,7 @@ public class ClaseVista extends JFrame {
 		apuesta.setBounds(382,240,145,29);
 		apuesta.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 18));
 		
-		sumaUsuario = new JLabel("Tienes: "/* aÃ±adir metodo */);
+		sumaUsuario = new JLabel("Tienes: "/* añadir metodo */);
 		sumaUsuario.setForeground(Color.white); 
 		sumaUsuario.setBounds(370,465,169,33);
 		sumaUsuario.setFont(new Font("Bernard MT Condensed", Font.BOLD, 30));

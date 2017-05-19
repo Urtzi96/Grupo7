@@ -8,7 +8,7 @@ public class ClasePrincipal {
 		ClaseVista vista4 = new ClaseVista("RESULTADO");
 
 		try{
-			new ClaseControlador(vista, modelo, vista2, vista3, vista4); 
+			new ClaseControlador(vista, modelo, vista2, vista3, vista4);
 		}catch(NullPointerException e){
 			System.out.println("Error, objetos nulos.");
 		}
