@@ -13,7 +13,7 @@ public class ClaseControlador implements ActionListener {
 		this.objVista2 = objVista2;
 		this.objVista3 = objVista3;
 		this.objVista4 = objVista4;
-		actionListener(this); // Escuchador para el botÃ³n 
+		actionListener(this); // Escuchador para el botón 
 	}
 	
 	public void quitarCartasUs(){
@@ -72,8 +72,8 @@ public class ClaseControlador implements ActionListener {
 					if(Integer.parseInt(dineroActual)>=Integer.parseInt(tuApuesta)){
 						objVista.setVisible(false);
 						objVista2.setVisible(true);
-						objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
-						objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");
+						objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
+						objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");
 					}
 				}
 			}catch(NumberFormatException e){
@@ -127,7 +127,7 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS PERDIDO");
 						dineroActual=Integer.toString(objModelo.resta());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 						con=0;
@@ -184,7 +184,7 @@ public class ClaseControlador implements ActionListener {
 				}
 				totalCr=objModelo.totalCartaCr(B);
 				objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
-				if(objModelo.stop(totalCr)==true){
+				if(objModelo.stop()==true){
 					objVista2.actualizar.setEnabled(false);
 					
 					c1=objModelo.getUs();
@@ -194,7 +194,7 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS GANADO");
 						dineroActual=Integer.toString(objModelo.suma());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 						con=0;//Si ganas, no hace falta esto verdad????????
@@ -207,7 +207,7 @@ public class ClaseControlador implements ActionListener {
 						objVista4.ganaspierdes.setText("HAS GANADO");
 						dineroActual=Integer.toString(objModelo.suma());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 						con=0;
@@ -219,14 +219,14 @@ public class ClaseControlador implements ActionListener {
 					}else if(c1==c2){
 						objVista4.ganaspierdes.setText("EMPATE");
 						dineroActual=Integer.toString(objModelo.getMoney());
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 					}else{
 						objVista4.ganaspierdes.setText("HAS PERDIDO");
 						dineroActual=Integer.toString(objModelo.resta());
 						objModelo.Money(Integer.parseInt(dineroActual));
-						objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+						objVista4.tienes.setText("TIENES "+dineroActual+" €");
 						objVista4.setVisible(true);
 
 						con=0;
@@ -239,7 +239,7 @@ public class ClaseControlador implements ActionListener {
 				}
 			}
 
-			if(objEvento.getSource()==objVista3.uno){//En los botones uno y once se repite cÃ³digo. MODULAR??
+			if(objEvento.getSource()==objVista3.uno){//En los botones uno y once se repite código. MODULAR??
 				objVista3.setVisible(false);
 				A=1;
 				objVista2.pedirCarta.setEnabled(true);
@@ -252,7 +252,7 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
 
 					con=0;
@@ -277,7 +277,7 @@ public class ClaseControlador implements ActionListener {
 					objVista4.ganaspierdes.setText("HAS PERDIDO");
 					dineroActual=Integer.toString(objModelo.resta());
 					objModelo.Money(Integer.parseInt(dineroActual));
-					objVista4.tienes.setText("TIENES "+dineroActual+" â‚¬");
+					objVista4.tienes.setText("TIENES "+dineroActual+" €");
 					objVista4.setVisible(true);
 
 					con=0;
@@ -299,9 +299,9 @@ public class ClaseControlador implements ActionListener {
 				objVista2.sumaCroupier.setText("El croupier tiene: "+totalCr);
 
 				dineroActual=Integer.toString(objModelo.getMoney());
-				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"â‚¬");
+				objVista2.dineroTotal.setText("Dinero: "+dineroActual+"€");
 
-				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"â‚¬");//PodrÃ­amos hacer que se pudiera cambiar la apuesta muy facil, SI NO?
+				objVista2.apuesta.setText("Apuesta: "+tuApuesta+"€");//Podríamos hacer que se pudiera cambiar la apuesta muy facil, SI NO?
 				
 				objVista2.pedirCarta.setVisible(true);
 				objVista2.pedirCarta.setEnabled(true);
